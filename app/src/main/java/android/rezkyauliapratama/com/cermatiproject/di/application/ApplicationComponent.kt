@@ -5,7 +5,6 @@ import android.rezkyauliapratama.com.cermatiproject.data.DataManager
 import dagger.Component
 import javax.inject.Singleton
 
-
 @Singleton
 @Component(modules = [ApplicationModule::class, NetworkModule::class])
 interface ApplicationComponent{

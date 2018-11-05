@@ -25,7 +25,6 @@ abstract class ApiObservable<LISTENER_CLASS> : AnkoLogger {
 
     fun registerListener(listener: LISTENER_CLASS) {
         mListeners.add(listener)
-        compositeDisposable = CompositeDisposable()
     }
 
     fun unregisterListener(listener: LISTENER_CLASS) {

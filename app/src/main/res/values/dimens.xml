@@ -9,4 +9,5 @@
     <dimen name="img_width_height">120dp</dimen>
     <dimen name="width_image_list_article">92dp</dimen>
     <dimen name="height_image_list_article">69dp</dimen>
+	<dimen name="sizeIcon">48dp</dimen>
 </resources>

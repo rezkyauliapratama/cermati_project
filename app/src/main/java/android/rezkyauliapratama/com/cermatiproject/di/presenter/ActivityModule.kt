@@ -1,7 +1,6 @@
 package android.rezkyauliapratama.com.cermatiproject.di.presenter
 
 import android.content.Context
-import android.rezkyauliapratama.com.cermatiproject.di.presenter.ActivityContext
 import androidx.fragment.app.FragmentActivity
 import dagger.Module
 import dagger.Provides

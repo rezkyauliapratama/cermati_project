@@ -7,7 +7,7 @@ import android.rezkyauliapratama.com.cermatiproject.BaseApplication
 import android.rezkyauliapratama.com.cermatiproject.di.presenter.ActivityModule
 import android.rezkyauliapratama.com.cermatiproject.di.presenter.ControllerComponent
 import android.rezkyauliapratama.com.cermatiproject.di.presenter.DaggerControllerComponent
-import android.rezkyauliapratama.com.cermatiproject.screens.common.ViewFactory
+import android.rezkyauliapratama.com.cermatiproject.screens.common.ViewMvcFactory
 import android.rezkyauliapratama.com.cermatiproject.screens.common.views.ViewPattern
 import android.view.LayoutInflater
 import android.view.View
@@ -21,7 +21,7 @@ abstract class BaseFragment<CONTROLLER : BaseController, VIEW_MVC : ViewPattern,
 
 
     @Inject
-    lateinit var viewFactory: ViewFactory
+    lateinit var viewMvcFactory: ViewMvcFactory
 
     @Inject
     lateinit var mController: CONTROLLER

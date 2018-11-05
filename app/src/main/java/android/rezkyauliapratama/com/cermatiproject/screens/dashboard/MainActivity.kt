@@ -1,13 +1,33 @@
 package android.rezkyauliapratama.com.cermatiproject.screens.dashboard
 
-import android.os.Bundle
-import android.rezkyauliapratama.com.cermatiproject.R
-import androidx.appcompat.app.AppCompatActivity
+import android.rezkyauliapratama.com.cermatiproject.databinding.ActivityMainBinding
+import android.rezkyauliapratama.com.cermatiproject.screens.common.controller.BaseActivity
 
-class MainActivity : AppCompatActivity() {
+class MainActivity : BaseActivity<MainController, MainView, ActivityMainBinding>() {
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
+    override fun initDataBinding() {
+        mDataBinding = mViewMvc.dataBinding as ActivityMainBinding
     }
+
+    override fun inject() {
+        controllerComponent.inject(this)
+
+
+    }
+
+    override fun initView() {
+        mViewMvc = viewMvcFactory.getMainView(null)
+        mController.bindView(mViewMvc)
+    }
+
+    override fun onStart() {
+        super.onStart()
+        mController.onStart()
+    }
+
+    override fun onStop() {
+        super.onStop()
+        mController.onStop()
+    }
+
 }

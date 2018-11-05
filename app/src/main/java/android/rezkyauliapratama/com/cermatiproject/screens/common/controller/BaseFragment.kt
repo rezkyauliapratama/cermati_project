@@ -7,8 +7,8 @@ import android.rezkyauliapratama.com.cermatiproject.BaseApplication
 import android.rezkyauliapratama.com.cermatiproject.di.presenter.ActivityModule
 import android.rezkyauliapratama.com.cermatiproject.di.presenter.ControllerComponent
 import android.rezkyauliapratama.com.cermatiproject.di.presenter.DaggerControllerComponent
-import android.rezkyauliapratama.com.cermatiproject.screens.common.ViewMvcFactory
-import android.rezkyauliapratama.com.cermatiproject.screens.common.views.ViewMvc
+import android.rezkyauliapratama.com.cermatiproject.screens.common.ViewFactory
+import android.rezkyauliapratama.com.cermatiproject.screens.common.views.ViewPattern
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -17,11 +17,11 @@ import androidx.fragment.app.Fragment
 import org.jetbrains.anko.AnkoLogger
 import javax.inject.Inject
 
-abstract class BaseFragment<CONTROLLER : BaseController, VIEW_MVC : ViewMvc, DATA_BINDING : ViewDataBinding>  : Fragment(), AnkoLogger{
+abstract class BaseFragment<CONTROLLER : BaseController, VIEW_MVC : ViewPattern, DATA_BINDING : ViewDataBinding>  : Fragment(), AnkoLogger{
 
 
     @Inject
-    lateinit var viewMvcFactory: ViewMvcFactory
+    lateinit var viewFactory: ViewFactory
 
     @Inject
     lateinit var mController: CONTROLLER

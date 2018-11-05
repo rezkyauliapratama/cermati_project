@@ -5,7 +5,7 @@ import androidx.annotation.StringRes
 import androidx.databinding.ViewDataBinding
 
 
-abstract class BaseViewMvc: ViewMvc {
+abstract class BaseView: ViewPattern {
 
     override lateinit var dataBinding: ViewDataBinding
 

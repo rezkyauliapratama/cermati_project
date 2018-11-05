@@ -5,8 +5,8 @@ import android.rezkyauliapratama.com.cermatiproject.BaseApplication
 import android.rezkyauliapratama.com.cermatiproject.di.presenter.ActivityModule
 import android.rezkyauliapratama.com.cermatiproject.di.presenter.ControllerComponent
 import android.rezkyauliapratama.com.cermatiproject.di.presenter.DaggerControllerComponent
-import android.rezkyauliapratama.com.cermatiproject.screens.common.ViewMvcFactory
-import android.rezkyauliapratama.com.cermatiproject.screens.common.views.ViewMvc
+import android.rezkyauliapratama.com.cermatiproject.screens.common.ViewFactory
+import android.rezkyauliapratama.com.cermatiproject.screens.common.views.ViewPattern
 import androidx.appcompat.app.AppCompatActivity
 
 import androidx.databinding.ViewDataBinding
@@ -14,10 +14,10 @@ import org.jetbrains.anko.AnkoLogger
 import javax.inject.Inject
 
 
-abstract class BaseActivity<T : BaseController, U : ViewMvc, V : ViewDataBinding>  : AppCompatActivity(), AnkoLogger{
+abstract class BaseActivity<T : BaseController, U : ViewPattern, V : ViewDataBinding>  : AppCompatActivity(), AnkoLogger{
 
     @Inject
-    lateinit var viewMvcFactory: ViewMvcFactory
+    lateinit var viewFactory: ViewFactory
 
     @Inject
     lateinit var mController: T

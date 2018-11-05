@@ -1,7 +1,7 @@
 package android.rezkyauliapratama.com.cermatiproject.di.presenter
 
 import android.rezkyauliapratama.com.cermatiproject.di.application.ApplicationComponent
-import android.rezkyauliapratama.com.cermatiproject.screens.MainActivity
+import android.rezkyauliapratama.com.cermatiproject.screens.dashboard.MainActivity
 import dagger.Component
 
 

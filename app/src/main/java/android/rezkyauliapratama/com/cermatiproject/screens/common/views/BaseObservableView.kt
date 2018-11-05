@@ -3,7 +3,7 @@ package android.rezkyauliapratama.com.cermatiproject.screens.common.views
 import org.jetbrains.anko.AnkoLogger
 import java.util.*
 
-abstract class BaseObservableViewMvc<ListenerType> : BaseViewMvc(), ObservableViewMvc<ListenerType>, AnkoLogger {
+abstract class BaseObservableView<ListenerType> : BaseView(), ObservableView<ListenerType>, AnkoLogger {
 
     private val mListeners = HashSet<ListenerType>()
 

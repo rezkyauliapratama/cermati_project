@@ -2,7 +2,7 @@ package android.rezkyauliapratama.com.cermatiproject.screens.common.views
 
 
 
-interface ObservableViewMvc<ListenerType> : ViewMvc {
+interface ObservableView<ListenerType> : ViewPattern {
 
     fun registerListener(listener: ListenerType)
 

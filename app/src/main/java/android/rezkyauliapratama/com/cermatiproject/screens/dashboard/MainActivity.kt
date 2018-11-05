@@ -1,4 +1,4 @@
-package android.rezkyauliapratama.com.cermatiproject.screens
+package android.rezkyauliapratama.com.cermatiproject.screens.dashboard
 
 import android.os.Bundle
 import android.rezkyauliapratama.com.cermatiproject.R

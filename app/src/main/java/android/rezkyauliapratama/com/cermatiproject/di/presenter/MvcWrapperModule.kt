@@ -1,7 +1,7 @@
 package android.rezkyauliapratama.com.cermatiproject.di.presenter
 
 import android.content.Context
-import android.rezkyauliapratama.com.cermatiproject.screens.common.ViewMvcFactory
+import android.rezkyauliapratama.com.cermatiproject.screens.common.ViewFactory
 import android.rezkyauliapratama.com.cermatiproject.screens.common.screennavigator.ScreensNavigator
 import android.view.LayoutInflater
 import androidx.fragment.app.FragmentActivity
@@ -12,8 +12,8 @@ import dagger.Provides
 class MvcWrapperModule{
 
     @Provides
-    fun getViewMvcFactory(@ActivityContext context: Context): ViewMvcFactory {
-        return ViewMvcFactory(LayoutInflater.from(context))
+    fun getViewMvcFactory(@ActivityContext context: Context): ViewFactory {
+        return ViewFactory(LayoutInflater.from(context))
     }
 
     @Provides

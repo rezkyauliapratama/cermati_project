@@ -50,56 +50,56 @@
 
       </androidx.appcompat.widget.Toolbar>
     </com.google.android.material.appbar.AppBarLayout>
-    <FrameLayout
+    <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+            android:id="@+id/swipeRefreshLayout"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             app:layout_behavior="@string/appbar_scrolling_view_behavior">
 
-      <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
-              android:id="@+id/swipeRefreshLayout"
-              android:layout_width="match_parent"
-              android:layout_height="match_parent"
-      >
+        <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
 
-        <androidx.recyclerview.widget.RecyclerView android:layout_width="match_parent"
-                                                   android:layout_height="match_parent"
-                                                   android:id="@+id/recyclerView"
-        />
+          <androidx.recyclerview.widget.RecyclerView
+                  android:layout_width="match_parent"
+                  android:layout_height="match_parent"
+                  android:id="@+id/recyclerView"/>
 
 
-      </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+          <LinearLayout
+                  android:id="@+id/layout_status"
+                  android:layout_width="match_parent"
+                  android:layout_height="match_parent"
+                  android:orientation="vertical"
+                  android:background="@color/background_material_white"
+                  android:visibility="gone"
+                  android:gravity="center">
+            <com.airbnb.lottie.LottieAnimationView
+                    android:id="@+id/lottieView"
+                    android:layout_width="@dimen/img_width_height"
+                    android:layout_height="@dimen/img_width_height"
+                    android:adjustViewBounds="true"
+                    android:scaleType="fitCenter"
+                    android:layout_marginLeft="@dimen/margin_xlarge"
+                    android:layout_marginRight="@dimen/margin_xlarge"
+                    app:lottie_autoPlay="true"
+                    app:lottie_fileName="animation/empty_box.json"
+                    app:lottie_loop="true"
+                    app:lottie_scale="1" />
+
+            <TextView
+                    android:id="@+id/tv_status"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingTop="@dimen/margin_small"
+                    android:text="status"
+                    android:textAppearance="@style/TextStyle.Small"/>
+          </LinearLayout>
 
 
-      <LinearLayout
-              android:id="@+id/layout_status"
-              android:layout_width="match_parent"
-              android:layout_height="match_parent"
-              android:orientation="vertical"
-              android:background="@color/background_material_white"
-              android:visibility="gone"
-              android:gravity="center">
-        <com.airbnb.lottie.LottieAnimationView
-                android:id="@+id/lottieView"
-                android:layout_width="@dimen/img_width_height"
-                android:layout_height="@dimen/img_width_height"
-                android:adjustViewBounds="true"
-                android:scaleType="fitCenter"
-                android:layout_marginLeft="@dimen/margin_xlarge"
-                android:layout_marginRight="@dimen/margin_xlarge"
-                app:lottie_autoPlay="true"
-                app:lottie_fileName="animation/empty_box.json"
-                app:lottie_loop="true"
-                app:lottie_scale="1" />
+      </FrameLayout>
 
-        <TextView
-                android:id="@+id/tv_status"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:paddingTop="@dimen/margin_small"
-                android:text="status"
-                android:textAppearance="@style/TextStyle.Small"/>
-      </LinearLayout>
-    </FrameLayout>
+    </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
   </androidx.coordinatorlayout.widget.CoordinatorLayout>
 
 

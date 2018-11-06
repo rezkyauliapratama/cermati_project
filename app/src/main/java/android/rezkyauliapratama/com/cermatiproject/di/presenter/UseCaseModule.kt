@@ -1,5 +1,6 @@
 package android.rezkyauliapratama.com.cermatiproject.di.presenter
 
+import android.rezkyauliapratama.com.cermatiproject.common.ConnectivityUtil
 import android.rezkyauliapratama.com.cermatiproject.data.DataManager
 import android.rezkyauliapratama.com.cermatiproject.usecases.SearchUserUseCase
 import dagger.Module

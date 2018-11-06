@@ -8,16 +8,18 @@ interface  MainView : ObservableView<MainView.Listener> {
 
     interface Listener {
         fun onSearch(s: String)
+        fun onFetchPage()
     }
 
-    fun bindListUsers(users: List<UserSchema>)
+    fun bindSearchItems(response: MutableList<UserSchema>)
 
     fun showProgressIndication()
 
     fun hideProgressIndication()
 
-    fun showStatusIndication()
+    fun showStatusIndication(message: String)
 
     fun hideStatusIndication()
+    fun bindFetchItems(response: MutableList<UserSchema>)
 
 }

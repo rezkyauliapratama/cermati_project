@@ -28,20 +28,33 @@ class MainController(private val screensNavigator: ScreensNavigator, private val
     }
 
     override fun onSearch(s: String) {
-        useCase.FetchApiAndNotify(s)
+        useCase.SearchAndNotify(s)
+    }
+
+    override fun onFetchPage() {
+        useCase.fetchAndNotify()
+    }
+
+    override fun onLoad() {
         mViewMvc.showProgressIndication()
     }
 
-    override fun onFetchTodoSuccess(response: MutableList<UserSchema>) {
+
+    override fun onSearchSuccess(response: MutableList<UserSchema>) {
         mViewMvc.hideStatusIndication()
         mViewMvc.hideProgressIndication()
-        mViewMvc.bindListUsers(response)
+        mViewMvc.bindSearchItems(response)
     }
 
-    override fun onFetchTodoFailure(message: String) {
-        mViewMvc.showStatusIndication()
+    override fun onSearchFailure(message: String) {
+        mViewMvc.showStatusIndication(message)
         mViewMvc.hideProgressIndication()
     }
 
+    override fun onFetchSuccess(response: MutableList<UserSchema>) {
+        mViewMvc.hideStatusIndication()
+        mViewMvc.hideProgressIndication()
+        mViewMvc.bindFetchItems(response)
+    }
 
 }

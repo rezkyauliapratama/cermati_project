@@ -1,6 +1,7 @@
 package android.rezkyauliapratama.com.cermatiproject.di.application
 
 import android.content.Context
+import android.rezkyauliapratama.com.cermatiproject.common.ConnectivityUtil
 import com.google.gson.Gson
 import com.google.gson.GsonBuilder
 import com.rezkyaulia.android.light_optimization_data.NetworkClient
@@ -24,6 +25,15 @@ class NetworkModule{
     @Singleton
     @Provides
     internal fun provideHttpClient(@ApplicationContext context: Context): NetworkClient {
+
         return NetworkClient(context)
+    }
+
+
+    @Singleton
+    @Provides
+    internal fun provideConnectivityUtil(@ApplicationContext context: Context): ConnectivityUtil {
+
+        return ConnectivityUtil(context)
     }
 }

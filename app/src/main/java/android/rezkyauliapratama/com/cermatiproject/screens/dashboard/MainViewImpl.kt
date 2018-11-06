@@ -3,6 +3,7 @@ package android.rezkyauliapratama.com.cermatiproject.screens.dashboard
 import android.rezkyauliapratama.com.cermatiproject.R
 import android.rezkyauliapratama.com.cermatiproject.data.network.schema.UserSchema
 import android.rezkyauliapratama.com.cermatiproject.databinding.ActivityMainBinding
+import android.rezkyauliapratama.com.cermatiproject.screens.common.Recyclerview.BaseAdapter
 import android.rezkyauliapratama.com.cermatiproject.screens.common.ViewMvcFactory
 import android.rezkyauliapratama.com.cermatiproject.screens.common.views.BaseObservableView
 import android.rezkyauliapratama.com.cermatiproject.screens.listitem.ListItemAdapter
@@ -46,14 +47,31 @@ class MainViewImpl(inflater: LayoutInflater, parent: ViewGroup?, viewMvcFactory:
             }
         })
 
+        adapter.setOnLoadMoreListener(object: BaseAdapter.OnLoadMoreListener{
+            override fun onLoadMore() {
+                /*Timber.e("NEXT PAGE")
+                mPage++
+                loadData()*/
+
+                for (listener in listeners){
+                    listener.onFetchPage()
+                }
+
+            }
+        })
 
     }
 
-    override fun bindListUsers(users: List<UserSchema>) {
-        adapter.bindItems(users)
+    override fun bindSearchItems(response: MutableList<UserSchema>) {
+
+        adapter.bindSearchItems(response)
 
     }
 
+    override fun bindFetchItems(response: MutableList<UserSchema>) {
+        adapter.bindFetchItems(response)
+
+    }
     override fun showProgressIndication() {
         binding.swipeRefreshLayout.isRefreshing = true
     }
@@ -63,11 +81,14 @@ class MainViewImpl(inflater: LayoutInflater, parent: ViewGroup?, viewMvcFactory:
 
     }
 
-    override fun showStatusIndication() {
+    override fun showStatusIndication(message: String) {
+        binding.tvStatus.text = message
         binding.layoutStatus.visibility = View.VISIBLE
+        adapter.removeData()
     }
 
     override fun hideStatusIndication() {
+        binding.tvStatus.text = ""
         binding.layoutStatus.visibility = View.GONE
     }
 }

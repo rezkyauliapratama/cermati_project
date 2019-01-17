@@ -19,7 +19,7 @@ import javax.inject.Inject
 class SearchApi  @Inject constructor(private val networkClient: NetworkClient, private val connectivityUtil: ConnectivityUtil) : AnkoLogger {
     val TAG : String  = SearchApi::class.java.simpleName
 
-    fun getSearchUser(s : String, page : Int) : ObservableSource<SearchResponseSchema> {
+        fun getSearchUser(s : String, page : Int) : ObservableSource<SearchResponseSchema> {
         return ObservableSource{ emitter ->
             try {
                 searchUser(s, page)
